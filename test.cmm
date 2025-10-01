@@ -16,6 +16,9 @@ int main() {
     alllllooooooooooo
     it is cmt
     */
+
+    duma "condition a > b = "  (a > b ? "true" : "false") "\n"
+
     duma "Result of " a " + " b " = " sum 
     "\nahhhhhh" "hahhahaha" duma "\ndong2" 
     "hhahaha2"// testing with case nextline of std::cin std::cout

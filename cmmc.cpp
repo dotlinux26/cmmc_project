@@ -90,18 +90,29 @@ vector<string> split_parts(const string& line) {
     size_t i = 0;
     while (i < line.size()) {
         while (i < line.size() && isspace(line[i])) i++;
-
         if (i >= line.size()) break;
 
-        if (line[i] == '"') { //literal starting with " 
-            // literal bắt đầu bằng "
+        if (line[i] == '"') { 
+            // literal start by "
             size_t start = i;
-            i++; // bỏ dấu " --- remove "  
+            i++; 
             while (i < line.size() && line[i] != '"') i++;
-            if (i < line.size()) i++; // bao gồm dấu " --combine ""
+            if (i < line.size()) i++; 
             parts.push_back(line.substr(start, i - start));
-        } else {
-            // if normal token/ bình thường: it can be a valuable or operator
+        } 
+        else if (line[i] == '(') {
+            // combine of () for condition struct std::cout
+            size_t start = i;
+            int depth = 0;
+            do {
+                if (line[i] == '(') depth++;
+                else if (line[i] == ')') depth--;
+                i++;
+            } while (i < line.size() && depth > 0);
+            parts.push_back(line.substr(start, i - start));
+        }
+        else {
+            // token normal
             size_t start = i;
             while (i < line.size() && !isspace(line[i])) i++;
             parts.push_back(line.substr(start, i - start));
@@ -109,6 +120,7 @@ vector<string> split_parts(const string& line) {
     }
     return parts;
 }
+
 
 // helper: join remaining parts with spaces
 static string join_from(const vector<string>& parts, size_t start) {
