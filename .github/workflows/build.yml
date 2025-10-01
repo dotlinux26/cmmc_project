@@ -1,0 +1,31 @@
+name: Build C-- release
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: sudo apt update && sudo apt install -y g++ mingw-w64
+
+    - name: Build Linux binary
+      run: g++ cmmc.cpp -o cmmc -static-libgcc -static-libstdc++
+
+    - name: Build Windows binary
+      run: x86_64-w64-mingw32-g++ cmmc.cpp -o cmmc.exe -static-libgcc -static-libstdc++
+
+    - name: Upload binaries
+      uses: actions/upload-artifact@v3
+      with:
+        name: cmmc-binaries
+        path: |
+          cmmc
+          cmmc.exe
