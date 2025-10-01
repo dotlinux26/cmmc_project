@@ -162,6 +162,8 @@ duma "Result: " (a + b) "\n"     // print arithmetic result
 ---
 
 ## 8. Complete Example Program
+
+```
 #include <iostream>
 
 int sumab(int a, int b) {
@@ -186,7 +188,9 @@ int main() {
     duma "Other test: " (a * b) "\n"
     duma "Bye!\n"
 }
+```
 - Running this program will output something like:
+```
 Enter 3 values for a, b, c:
 2 5 9
 Condition a > b = false
@@ -194,7 +198,7 @@ Result of 2 + 5 = 7
 Third value entered: 9
 Other test: 10
 Bye!
-
+```
 ---
 
 ## 9. Notes
