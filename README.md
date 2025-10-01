@@ -96,18 +96,35 @@ int sumab(int a, int b) {
 
 ## 3. Console Output
 duma "Hello world\n"      // print string
-dume a                    // print variable value
-duma "Value = " a b "\n"  // concatenate string + variable directly
+duma "Value = " a "\n"    // print variable concatenated with string
 - `duma` = start printing.
-- `dume` = print variable value.
-- Concatenate string and variable by writing them side by side, no `+` or `<<` needed.
+- You can concatenate strings and variables by writing them side by side, no `+` or `<<` needed.
 
 ---
 
 ## 4. Input
-- Basic C-- has no standard input, you can write custom input functions.
-- Example of printing a prompt + variable:
-duma "input a:" dume a
+dume = input from user, similar to `std::cin`.
+
+### Single variable:
+int a
+
+duma "Enter value for a: "
+dume a
+
+duma "You entered: " a "\n"
+
+### Multiple variables (using comma):
+int x
+int y
+int z
+
+duma "Enter 3 values: "
+dume x,y,z
+
+duma "Values are: " x " " y " " z "\n"
+
+- You can input **1 variable** or **multiple variables** separated by `,`.
+- Variables will receive values in the order they are listed.
 
 ---
 
@@ -152,36 +169,38 @@ int sumab(int a, int b) {
 }
 
 int main() {
-    int a = 6
-    int b = 4
+    int a
+    int b
+    int c
 
-    duma "input a:" dume a
-    duma "input b:" dume b
+    duma "Enter 3 values for a, b, c: "
+    dume a,b,c
 
     int sum = sumab(a, b)
 
-    duma "condition a > b = " (a > b ? "true" : "false") "\n"
+    duma "Condition a > b = " (a > b ? "true" : "false") "\n"
 
     duma "Result of " a " + " b " = " sum "\n"
+    duma "Third value entered: " c "\n"
 
     duma "Other test: " (a * b) "\n"
     duma "Bye!\n"
 }
-- Running this program will output:
-input a:6
-input b:4
-condition a > b = true
-Result of 6 + 4 = 10
-Other test: 24
+- Running this program will output something like:
+Enter 3 values for a, b, c:
+2 5 9
+Condition a > b = false
+Result of 2 + 5 = 7
+Third value entered: 9
+Other test: 10
 Bye!
 
 ---
 
 ## 9. Notes
 1. No need for `;` at the end of lines.
-2. `duma` / `dume` replace `std::cout`.
+2. `duma` = output, `dume` = input.
 3. Concatenate variables and strings by writing them side by side, or use `(a + b)` to calculate first.
 4. Functions and operators are similar to C++ but C-- is more flexible.
-5. Comments still use `//` or `/* ... */`.
-
-
+5. Comments use `//` or `/* ... */`.
+6. `dume` can take **1 variable** or **multiple variables separated by `,`**.
