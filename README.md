@@ -47,6 +47,14 @@ g++ cmmc.cpp -o cmmc.exe
 ```
 ---
 
+## Download v1.0.0
+
+You can download the first stable release (v1.0.0) of C-- compiler:
+
+- [Release v1.0.0](https://github.com/dotlinux26/cmmc_project/releases/tag/v1.0.0)
+
+---
+
 ## Screenshots / Demonstration
 ![Compiler Demo](docs/demo.png)
 ![Compiler Demo](docs/demo2.png)
