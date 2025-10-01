@@ -95,8 +95,12 @@ int sumab(int a, int b) {
 ---
 
 ## 3. Console Output
+- duma similar std::cout.
+```
 duma "Hello world\n"      // print string
-duma "Value = " a "\n"    // print variable concatenated with string
+duma "Value = " a "\n"    
+// print variable concatenated with string
+```
 - `duma` = start printing.
 - You can concatenate strings and variables by writing them side by side, no `+` or `<<` needed.
 
@@ -113,7 +117,8 @@ dume a
 
 duma "You entered: " a "\n"
 
-### Multiple variables (using comma):
+### Multiple variables (using duma):
+```
 int x
 int y
 int z
@@ -125,7 +130,7 @@ duma "Values are: " x " " y " " z "\n"
 
 - You can input **1 variable** or **multiple variables** separated by `,`.
 - Variables will receive values in the order they are listed.
-
+```
 ---
 
 ## 5. Operators and Expressions
@@ -162,8 +167,6 @@ duma "Result: " (a + b) "\n"     // print arithmetic result
 ---
 
 ## 8. Complete Example Program
-
-```
 #include <iostream>
 
 int sumab(int a, int b) {
@@ -188,9 +191,7 @@ int main() {
     duma "Other test: " (a * b) "\n"
     duma "Bye!\n"
 }
-```
 - Running this program will output something like:
-```
 Enter 3 values for a, b, c:
 2 5 9
 Condition a > b = false
@@ -198,7 +199,7 @@ Result of 2 + 5 = 7
 Third value entered: 9
 Other test: 10
 Bye!
-```
+
 ---
 
 ## 9. Notes
