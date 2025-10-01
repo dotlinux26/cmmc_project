@@ -74,6 +74,114 @@ This project is **open source** and welcomes:
 -This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 
+# C-- Language Syntax Guide
 
+## 1. Variable Declaration
+int a = 5        // integer
+float b = 3.2    // floating point
+string s = "hi"  // string
+- No need for `;` at the end of the line.
+- Data types are similar to C++ (`int`, `float`, `string`...).
+
+---
+
+## 2. Functions
+int sumab(int a, int b) {
+    return a + b
+}
+- Functions take parameters and return a value.
+- No need for `;` after `return`.
+
+---
+
+## 3. Console Output
+duma "Hello world\n"      // print string
+dume a                    // print variable value
+duma "Value = " a b "\n"  // concatenate string + variable directly
+- `duma` = start printing.
+- `dume` = print variable value.
+- Concatenate string and variable by writing them side by side, no `+` or `<<` needed.
+
+---
+
+## 4. Input
+- Basic C-- has no standard input, you can write custom input functions.
+- Example of printing a prompt + variable:
+duma "input a:" dume a
+
+---
+
+## 5. Operators and Expressions
+a + b
+a - b
+a * b
+a / b
+a % b
+a > b
+a < b
+a == b
+a != b
+- Standard arithmetic and comparison operators.
+- Ternary operator is supported:
+duma "a > b = " (a > b ? "true" : "false") "\n"
+
+---
+
+## 6. String Concatenation
+duma "Hello " "world" "!"        // => Hello world!
+duma "Result: " (a + b) "\n"     // print arithmetic result
+- Consecutive strings automatically concatenate.
+- Variables or expressions placed next to strings will be printed.
+
+---
+
+## 7. Comments
+// single-line comment
+/* 
+   multi-line comment
+*/
+- Comments follow standard C/C++ syntax.
+
+---
+
+## 8. Complete Example Program
+#include <iostream>
+
+int sumab(int a, int b) {
+    return a + b
+}
+
+int main() {
+    int a = 6
+    int b = 4
+
+    duma "input a:" dume a
+    duma "input b:" dume b
+
+    int sum = sumab(a, b)
+
+    duma "condition a > b = " (a > b ? "true" : "false") "\n"
+
+    duma "Result of " a " + " b " = " sum "\n"
+
+    duma "Other test: " (a * b) "\n"
+    duma "Bye!\n"
+}
+- Running this program will output:
+input a:6
+input b:4
+condition a > b = true
+Result of 6 + 4 = 10
+Other test: 24
+Bye!
+
+---
+
+## 9. Notes
+1. No need for `;` at the end of lines.
+2. `duma` / `dume` replace `std::cout`.
+3. Concatenate variables and strings by writing them side by side, or use `(a + b)` to calculate first.
+4. Functions and operators are similar to C++ but C-- is more flexible.
+5. Comments still use `//` or `/* ... */`.
 
 
